@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is my Ant build file for the Java math project -->
+<!-- It compiles Java files and makes a JAR -->
+
+<project name="ArbitraryArithmetic" default="build" basedir=".">
+    <!-- Set up some directories -->
+    <property name="src.dir" value="."/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir" value="${build.dir}"/>
+    <property name="jar.file" value="${jar.dir}/aarithmetic.jar"/>
+
+    <!-- Clean the build directory -->
+    <target name="clean" description="Remove the build directory">
+        <delete dir="${build.dir}"/>
+        <echo message="Cleaned up build directory!"/>
+    </target>
+
+    <!-- Make the build directories -->
+    <target name="init" description="Create build directories">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <echo message="Created build directories!"/>
+    </target>
+
+    <!-- Compile all Java files -->
+    <target name="compile" depends="init" description="Compile Java source files">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false">
+            <include name="arbitraryarithmetic/*.java"/>
+            <include name="MyInfArith.java"/>
+        </javac>
+        <echo message="Compiled Java files to ${classes.dir}!"/>
+    </target>
+
+    <!-- Create the JAR file -->
+    <target name="jar" depends="compile" description="Create aarithmetic.jar">
+        <jar destfile="${jar.file}" basedir="${classes.dir}">
+            <include name="**/*.class"/>
+        </jar>
+        <echo message="Created ${jar.file}!"/>
+    </target>
+
+    <!-- Default target: clean, compile, and create JAR -->
+    <target name="build" depends="clean,jar" description="Full build">
+        <echo message="Build complete! Check ${build.dir} for JAR and classes."/>
+    </target>
+</project>
