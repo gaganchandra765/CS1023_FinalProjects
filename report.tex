@@ -153,7 +153,7 @@ Below are UML class diagrams for \texttt{AInteger}, \texttt{AFloat}, and \texttt
                 - removeLeadingZeros(s: String): String \\
                 - removeTrailingZeros(s: String): String
             }{}
-            \umlclass[below of=AFloat, yshift=-1cm]{AInteger}{...}{}
+            %\umlclass[below of=AFloat, yshift=-1cm]{AInteger}{...}{}
             \umluniaggreg[geometry=|-|, anchor1=180, anchor2=0]{AFloat}{AInteger}
         \end{umlpackage}
     \end{tikzpicture}
@@ -169,9 +169,9 @@ Below are UML class diagrams for \texttt{AInteger}, \texttt{AFloat}, and \texttt
             \\
             + main(args: String[]): void
         }{}
-        \begin{umlpackage}[right of=MyInfArith, xshift=4cm]{arbitraryarithmetic}
-            \umlclass{AInteger}{...}{}
-            \umlclass[below of=AInteger]{AFloat}{...}{}
+        \begin{umlpackage}[right of=MyInfArith, xshift=-1cm]{arbitraryarithmetic}
+            \umlclass[x=7]{AInteger}{...}{}
+            \umlclass[x=7 ,y=-3]{AFloat}{...}{}
         \end{umlpackage}
         \umluniaggreg[geometry=|-|, anchor1=0, anchor2=180]{MyInfArith}{AInteger}
         \umluniaggreg[geometry=|-|, anchor1=0, anchor2=180]{MyInfArith}{AFloat}
@@ -285,7 +285,6 @@ We verified the library through the following methods:
         \item Large numbers: \texttt{123456789012345 + 987654321}.
         \item Invalid inputs: \texttt{"abc"}, \texttt{"12.34.56"} (handled by \texttt{AInteger}/\texttt{AFloat}).
     \end{itemize}
-    \item \textbf{Mental Simulation}: Walked through arithmetic algorithms (e.g., digit-by-digit addition) to ensure correctness.
     \item \textbf{Automation Testing}: Used \texttt{compile\_and\_run.py} to run multiple test cases, verifying outputs against expected results.
     \item \textbf{Docker Testing}: Ran the Docker container to ensure the library works in a containerized environment.
 \end{itemize}
