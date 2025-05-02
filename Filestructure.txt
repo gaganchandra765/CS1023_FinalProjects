@@ -1,0 +1,14 @@
+CS1023JavaProject/
+- arbitraryarithmetic/
+  - AFloat.class
+  - AFloat.java
+  - AInteger.class
+  - AInteger.java
+- build.xml
+- compile_and_run.py
+- Dockerfile
+- filestructure.txt
+- MyInfArith.class
+- MyInfArith.java
+- README.md
+- report.tex
