@@ -1,12 +1,10 @@
-Arbitrary-Precision Arithmetic Library
+Arbitrary-Precision Arithmetic Library ****
+
+
 This project provides a Java library for performing arbitrary-precision arithmetic on integers and floating-point numbers. It includes tools to automate building and running the application.
-Team Members
 
-John Doe (ID: 123456)
-Jane Smith (ID: 789012)
-
-Project Structure
-project/
+Project Structure: 
+CS1023JavaProject/
 - arbitraryarithmetic/
   - AInteger.java
   - AFloat.java
@@ -22,7 +20,7 @@ Prerequisites
 Java Development Kit (JDK): Version 17 or higher.
 Python 3: For running the compile_and_run.py script.
 Apache Ant: For building the project with build.xml.
-Docker: Optional, for running the project in a container.
+Docker: for running the project in a container.
 
 Building the Project
 Option 1: Using Ant (Local)
@@ -96,4 +94,6 @@ Notes
 The library supports arbitrary-precision integers and floats (up to 30 decimal digits).
 Invalid inputs (e.g., "abc") are handled by setting the number to 0 or 0.0 with an error message.
 Division by zero outputs an error message and returns 0 or 0.0.
+
+
 
